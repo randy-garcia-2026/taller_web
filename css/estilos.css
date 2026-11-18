@@ -1,0 +1,599 @@
+/* =====================================================================
+   TALLER WEB - Hoja de estilos
+   Diseño pensado primero para celular; los bloques @media (min-width)
+   adaptan la página a pantallas más grandes.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1. VARIABLES: AQUÍ SE CAMBIAN LOS COLORES Y LAS FUENTES
+   --------------------------------------------------------------------- */
+:root {
+  /* COLORES: cambia el valor (#xxxxxx) y se actualiza toda la página */
+  --color-tinta: #1e2a30;        /* texto principal y fondos oscuros */
+  --color-papel: #f2f4f3;        /* fondo claro de la página */
+  --color-papel-2: #e4e8e7;      /* fondo claro alterno (sección ubicación) */
+  --color-acento: #a8231b;       /* rojo para botones y detalles */
+  --color-acento-oscuro: #861a14;/* rojo al pasar el mouse */
+  --color-acero: #55646c;        /* texto secundario */
+  --color-linea: #c9d0d2;        /* líneas finas */
+  --color-blanco: #ffffff;
+  --color-tinta-suave: #b9c4c9;  /* texto secundario sobre fondo oscuro */
+  --color-linea-barra: #38474e;  /* líneas finas dentro de la barra superior */
+  --color-linea-oscura: #4a5a62; /* líneas finas sobre fondos oscuros */
+
+  /* FUENTES: la fuente se carga desde Google Fonts en index.html */
+  --fuente: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Medidas generales */
+  --ancho-max: 72rem;
+  --margen: 1.25rem;             /* espacio a los lados en celular */
+  --alto-barra: 4rem;
+  --espacio-seccion: clamp(3rem, 12vw, 9rem); /* aire entre secciones */
+}
+
+/* ---------------------------------------------------------------------
+   2. BASE
+   --------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--alto-barra) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-tinta);
+  background: var(--color-papel);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+
+a { color: inherit; }
+
+/* Foco visible para quien navega con teclado */
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+.oscuro :focus-visible,
+.pie :focus-visible,
+.barra :focus-visible { outline-color: var(--color-blanco); }
+
+.solo-lectores {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.saltar {
+  position: absolute;
+  left: var(--margen);
+  top: -4rem;
+  z-index: 100;
+  padding: .6rem 1rem;
+  background: var(--color-blanco);
+  color: var(--color-tinta);
+  font-weight: 600;
+}
+.saltar:focus { top: .5rem; }
+
+/* Marca de datos de práctica: [EJEMPLO] */
+.ejemplo {
+  font-size: max(.85em, .8rem); /* legible también en celular */
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--color-acero);
+  white-space: nowrap;
+}
+.oscuro .ejemplo,
+.pie .ejemplo { color: var(--color-tinta-suave); }
+
+/* Dentro de títulos y cifras grandes, la marca no hereda el tamaño ni el
+   ancho de la letra: se ve pequeña, normal y en color secundario */
+.titulo-seccion .ejemplo,
+.cifra__numero .ejemplo,
+.razon__cifra .ejemplo,
+.paso__numero .ejemplo {
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: 100%;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* ---------------------------------------------------------------------
+   3. TIPOGRAFÍA Y PIEZAS COMUNES
+   --------------------------------------------------------------------- */
+.titulo-seccion {
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: var(--margen);
+}
+
+.seccion { padding-block: var(--espacio-seccion); }
+
+.oscuro {
+  background: var(--color-tinta);
+  color: var(--color-papel);
+}
+
+.intro {
+  max-width: 34rem;
+  margin-top: 1.25rem;
+  color: var(--color-acero);
+}
+.oscuro .intro { color: var(--color-tinta-suave); }
+
+/* Botones */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: .75rem 1.5rem;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--color-tinta);
+  background: transparent;
+  color: var(--color-tinta);
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.boton:hover { background: var(--color-tinta); color: var(--color-papel); }
+
+.boton--principal {
+  background: var(--color-acento);
+  border-color: var(--color-acento);
+  color: var(--color-blanco);
+}
+.boton--principal:hover {
+  background: var(--color-acento-oscuro);
+  border-color: var(--color-acento-oscuro);
+  color: var(--color-blanco);
+}
+
+.boton--claro { border-color: var(--color-papel); color: var(--color-papel); }
+.boton--claro:hover { background: var(--color-papel); color: var(--color-tinta); }
+
+/* Aparición suave al hacer scroll (máximo 400 ms).
+   Solo se activa si JavaScript funciona (clase "js" en <html>). */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.js .revelar.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .revelar { opacity: 1; transform: none; transition: none; }
+  .boton, .barra__menu a, .servicio { transition: none; }
+}
+
+/* ---------------------------------------------------------------------
+   4. BARRA SUPERIOR FIJA
+   --------------------------------------------------------------------- */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-tinta);
+  color: var(--color-papel);
+}
+
+.barra__interior {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: var(--alto-barra);
+}
+
+.barra__marca {
+  margin-right: auto;
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.25rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  white-space: nowrap;   /* la marca siempre en una sola línea */
+  flex-shrink: 0;
+}
+
+.barra__whatsapp {
+  min-height: 2.5rem;
+  padding: .4rem .6rem;   /* compacto en pantallas estrechas */
+  font-size: .875rem;
+  white-space: nowrap;
+  border-color: var(--color-papel);
+  color: var(--color-papel);
+}
+.barra__whatsapp:hover { background: var(--color-papel); color: var(--color-tinta); }
+.solo-grande { display: none; }
+
+/* Botón de tres rayas (celular) */
+.barra__boton-menu {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem; height: 2.75rem;
+  padding: 0 .65rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.barra__boton-menu span {
+  display: block;
+  height: 2px;
+  background: var(--color-papel);
+}
+
+/* Menú: en celular es un panel que se abre debajo de la barra */
+.barra__menu {
+  display: none;
+  position: absolute;
+  left: 0; right: 0;
+  top: 100%;
+  padding: .5rem var(--margen) 1.25rem;
+  background: var(--color-tinta);
+  border-top: 1px solid var(--color-linea-barra);
+}
+.barra__menu.abierto { display: block; }
+.barra__menu a {
+  display: block;
+  padding: .85rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-linea-barra);
+}
+.barra__menu a:hover { color: var(--color-tinta-suave); }
+
+/* ---------------------------------------------------------------------
+   5. PORTADA
+   --------------------------------------------------------------------- */
+.portada { padding-block: clamp(3rem, 8vw, 6rem) 0; }
+
+.portada__rejilla { display: grid; gap: 2.5rem; }
+
+.portada__titulo {
+  font-weight: 800;
+  font-stretch: 100%;
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.portada__texto { max-width: 30rem; margin-top: 1.5rem; font-size: 1.15rem; }
+
+.portada__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+.portada__foto img {
+  width: 100%;
+  max-width: 35rem; /* la foto original mide 1000 px; aquí se muestra más chica */
+}
+
+/* Cifras de la portada */
+.cifras {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: clamp(3.5rem, 9vw, 6rem);
+  padding-block: 2rem;
+  border-top: 2px solid var(--color-tinta);
+}
+.cifra__numero {
+  display: block;
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: clamp(3.25rem, 11vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: -.02em;
+}
+.cifra__texto { display: block; margin-top: .4rem; color: var(--color-acero); }
+
+/* ---------------------------------------------------------------------
+   6. SERVICIOS
+   --------------------------------------------------------------------- */
+.servicios__rejilla { display: grid; gap: 3rem; }
+
+.servicios__foto { margin-top: 2.5rem; }
+.servicios__foto img { width: 100%; max-width: 47rem; } /* original: 756 px */
+
+.servicio {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--color-linea);
+}
+.servicio:last-child { border-bottom: 1px solid var(--color-linea); }
+.servicio__nombre {
+  font-weight: 700;
+  font-stretch: 105%;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+.servicio__texto { max-width: 32rem; margin-top: .5rem; color: var(--color-acero); }
+
+.servicios__enlace { margin-top: 2rem; }
+.servicios__enlace a { font-weight: 700; text-underline-offset: .25em; }
+.servicios__enlace a:hover { color: var(--color-acento); }
+
+/* ---------------------------------------------------------------------
+   7. PROCESO (los pasos sí son una secuencia: llevan número)
+   --------------------------------------------------------------------- */
+.proceso { background: var(--color-papel-2); }
+
+.pasos { margin-top: 3rem; counter-reset: paso; }
+
+.paso {
+  display: grid;
+  gap: 1rem;
+  padding-block: 2rem;
+  border-top: 2px solid var(--color-tinta);
+}
+.paso__numero {
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  line-height: .9;
+  color: var(--color-acento);
+}
+.paso__nombre {
+  font-weight: 700;
+  font-stretch: 105%;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+.paso__texto { max-width: 30rem; margin-top: .5rem; }
+
+.paso__fotos { display: flex; flex-wrap: wrap; gap: 1rem; }
+/* Las fotos del proceso son pequeñas: se muestran sin estirarse */
+.paso__fotos img { flex: 1 1 9rem; min-width: 0; max-height: 20rem; object-fit: cover; } /* en celular las fotos aprovechan el ancho */
+
+/* ---------------------------------------------------------------------
+   8. ANTES Y DESPUÉS
+   --------------------------------------------------------------------- */
+.resultados__rejilla { display: grid; gap: 2.5rem; margin-top: 3rem; }
+
+.resultado__etiqueta {
+  margin-bottom: .75rem;
+  font-weight: 700;
+  font-stretch: 105%;
+  font-size: 1.3rem;
+}
+.resultado img { width: 100%; max-width: 24.9375rem; } /* original: 399 px */
+.resultado__pie { max-width: 24rem; margin-top: .75rem; color: var(--color-acero); }
+
+/* Espacio vacío para la foto "después" (misma proporción que la otra foto) */
+.espacio-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 24.9375rem;
+  aspect-ratio: 399 / 501;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-acero);
+  border: 2px dashed var(--color-acero);
+}
+
+.aviso {
+  max-width: 36rem;
+  margin-top: 2.5rem;
+  font-size: .95rem;
+  color: var(--color-acero);
+}
+
+/* ---------------------------------------------------------------------
+   9. POR QUÉ ELEGIRNOS (fondo oscuro, cifras grandes)
+   --------------------------------------------------------------------- */
+.razones { display: grid; gap: 2.5rem; margin-top: 3.5rem; }
+
+.razon { padding-top: 1.25rem; border-top: 1px solid var(--color-linea-oscura); }
+.razon__cifra {
+  display: block;
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: clamp(3.25rem, 11vw, 6rem);
+  line-height: .95;
+  letter-spacing: .01em; /* la letra condensada necesita aire entre letras... */
+  word-spacing: .18em;   /* ...y entre palabras, para que no se lea "Porescrito" */
+}
+/* La marca [EJEMPLO] va en su propia línea bajo la cifra, igual en las cuatro razones */
+.razon__cifra .ejemplo { display: block; margin-top: .5rem; }
+.razon__texto { max-width: 26rem; margin-top: .75rem; color: var(--color-tinta-suave); }
+
+.razones__cierre {
+  max-width: 38rem;
+  margin-top: 3.5rem;
+  font-size: 1.15rem;
+}
+
+/* ---------------------------------------------------------------------
+   10. TESTIMONIOS (una sola columna)
+   --------------------------------------------------------------------- */
+.citas { margin-top: 3rem; }
+
+.cita { padding-block: 2rem; border-top: 1px solid var(--color-linea); }
+.cita:last-child { border-bottom: 1px solid var(--color-linea); }
+.cita__texto {
+  max-width: 38rem;
+  font-weight: 600;
+  font-stretch: 105%;
+  font-size: clamp(1.3rem, 3.6vw, 1.9rem);
+  line-height: 1.3;
+}
+.cita__autor { margin-top: 1rem; color: var(--color-acero); }
+
+/* ---------------------------------------------------------------------
+   11. UBICACIÓN Y HORARIO
+   --------------------------------------------------------------------- */
+.ubicacion { background: var(--color-papel-2); }
+.ubicacion__rejilla { display: grid; gap: 2.5rem; }
+
+.datos { margin-top: 2rem; }
+.datos div { padding-block: 1rem; border-top: 1px solid var(--color-linea); }
+.datos div:last-child { border-bottom: 1px solid var(--color-linea); }
+.datos dt { font-weight: 700; }
+.datos dd a { text-underline-offset: .2em; }
+.datos dd a:hover { color: var(--color-acento); }
+.ubicacion .boton { margin-top: 2rem; }
+
+.mapa iframe {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  border: 1px solid var(--color-acero);
+}
+.mapa__nota { margin-top: .75rem; color: var(--color-acero); }
+
+/* ---------------------------------------------------------------------
+   12. COTIZACIÓN (formulario)
+   --------------------------------------------------------------------- */
+.cotizar__rejilla { display: grid; gap: 2.5rem; }
+
+.formulario { display: grid; gap: 1.25rem; max-width: 34rem; }
+
+.campo { display: grid; gap: .4rem; }
+.campo label { font-weight: 700; }
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: .7rem .85rem;
+  font: inherit;
+  color: var(--color-tinta);
+  background: var(--color-blanco);
+  border: 2px solid var(--color-acero);
+  border-radius: 0;
+}
+.campo textarea { min-height: 7rem; resize: vertical; }
+.campo input:focus-visible,
+.campo select:focus-visible,
+.campo textarea:focus-visible { outline-offset: 0; border-color: var(--color-acento); }
+
+.formulario__error {
+  min-height: 1.5rem;
+  font-weight: 600;
+  color: var(--color-acento);
+}
+.formulario__nota { font-size: .95rem; color: var(--color-acero); }
+.formulario .boton { justify-self: start; }
+
+/* ---------------------------------------------------------------------
+   13. PIE DE PÁGINA
+   --------------------------------------------------------------------- */
+.pie { padding-block: 4rem 2.5rem; background: var(--color-tinta); color: var(--color-papel); }
+.pie__rejilla { display: grid; gap: 2.5rem; }
+.pie__marca {
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.5rem;
+}
+.pie__descripcion { max-width: 22rem; margin-top: .5rem; color: var(--color-tinta-suave); }
+.pie__datos p { margin-bottom: .5rem; }
+.pie a { text-underline-offset: .2em; }
+.pie__enlaces li { margin-bottom: .4rem; }
+.pie__legal {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  font-size: .9rem;
+  color: var(--color-tinta-suave);
+  border-top: 1px solid var(--color-linea-oscura);
+}
+.pie__legal p + p { margin-top: .5rem; }
+
+/* ---------------------------------------------------------------------
+   14. ADAPTACIÓN A PANTALLAS MÁS GRANDES
+   --------------------------------------------------------------------- */
+@media (min-width: 40rem) {
+  :root { --margen: 2rem; }
+  .solo-grande { display: inline; }
+  .barra__interior { gap: .75rem; }
+  .barra__whatsapp { padding: .4rem 1rem; font-size: .95rem; }
+  .cifras { grid-template-columns: repeat(3, auto); justify-content: space-between; }
+  .resultados__rejilla { grid-template-columns: 1fr 1fr; align-items: start; }
+  .resultado--despues { margin-top: 4rem; }  /* ritmo asimétrico */
+  .pie__rejilla { grid-template-columns: 1.2fr 1fr 1fr; }
+}
+
+@media (min-width: 60rem) {
+  :root { --margen: 3rem; }
+
+  /* Menú en línea, sin botón de tres rayas */
+  .barra__boton-menu { display: none; }
+  .barra__menu {
+    display: flex;
+    position: static;
+    gap: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+  .barra__menu a { padding: .25rem 0; border: 0; font-size: .95rem; }
+  .barra__menu a:hover { text-decoration: underline; text-underline-offset: .3em; color: inherit; }
+  /* Orden en computadora: marca, enlaces, y el botón de WhatsApp al extremo derecho */
+  .barra__marca { margin-right: 2rem; }
+  .barra__interior { gap: 0; }
+  .barra__menu { margin-right: auto; }
+  .barra__whatsapp { margin-left: 1.5rem; }
+
+  /* Portada: texto a la izquierda, foto más chica y bajada a la derecha */
+  .portada__rejilla {
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+    align-items: end;
+  }
+  .portada__foto { padding-bottom: .5rem; }
+
+  /* Servicios: títulos y foto a la izquierda, lista a la derecha */
+  .servicios__rejilla { grid-template-columns: 5fr 6fr; gap: 6rem; }
+  .servicios__lista { padding-top: 2.5rem; }
+
+  /* Proceso: número | texto | fotos */
+  .paso {
+    grid-template-columns: 6rem minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 2rem;
+    align-items: start;
+    padding-block: 2.5rem;
+  }
+  .paso__fotos { flex-wrap: nowrap; justify-content: flex-end; }
+  /* en escritorio las fotos son más grandes (antes eran de 10.5 rem) y de altura pareja */
+  .paso__fotos img { flex: 1 1 0; max-width: 18rem; height: 18rem; max-height: none; }
+  .pasos { margin-left: 12%; } /* sangría: alineación asimétrica */
+
+  /* Razones: dos columnas escalonadas */
+  .razones { grid-template-columns: 1fr 1fr; column-gap: 6rem; row-gap: 4rem; }
+  .razon:nth-child(even) { margin-top: 5rem; }
+
+  /* Testimonios: cada cita con sangría distinta */
+  .cita:nth-child(2) { margin-left: 12%; }
+  .cita:nth-child(3) { margin-left: 24%; }
+
+  .ubicacion__rejilla { grid-template-columns: 5fr 6fr; gap: 5rem; align-items: start; }
+  .cotizar__rejilla { grid-template-columns: 4fr 6fr; gap: 6rem; }
+  .pie__rejilla { grid-template-columns: 1fr 1.4fr .7fr; gap: 4rem; }
+}

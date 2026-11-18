@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CAMBIAR: título y descripción que aparecen en Google -->
+  <title>Taller Web | Enderezado y pintura de carros en Ciudad de Guatemala</title>
+  <meta name="description" content="Enderezado de carrocería, pintura completa, retoques, igualación de color y pulido en Zona 12, Ciudad de Guatemala. Cotización por escrito antes de empezar. (Datos de práctica)">
+
+  <!-- Fuente Archivo (Google Fonts). Para cambiarla, edita también --fuente en css/estilos.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Datos estructurados para Google (LocalBusiness).
+       TODOS LOS DATOS SON [EJEMPLO]. CAMBIAR: nombre, teléfono, dirección y horario reales. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoBodyShop",
+    "name": "Taller Web",
+    "description": "Enderezado y pintura de carros en Ciudad de Guatemala. Datos de ejemplo.",
+    "telephone": "+50225550142",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6a. Avenida 12-45, Zona 12",
+      "addressLocality": "Ciudad de Guatemala",
+      "addressCountry": "GT"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00", "closes": "17:30" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ============ 1. BARRA SUPERIOR FIJA ============
+       CAMBIAR: el número de WhatsApp está en wa.me/50255550187 (código de país + número, sin signos).
+       El mensaje que se escribe solo está después de "?text=". -->
+  <header class="barra">
+    <div class="contenedor barra__interior">
+      <a class="barra__marca" href="#inicio">Taller Web</a>
+
+      <nav class="barra__menu" id="menu" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#cotizar">Cotizar</a>
+      </nav>
+
+      <a class="boton barra__whatsapp"
+         href="https://wa.me/50255550187?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20de%20carrocer%C3%ADa%20o%20pintura."
+         aria-label="Escribir por WhatsApp">
+        <span class="solo-grande">Escribir por&nbsp;</span>WhatsApp
+      </a>
+
+      <button class="barra__boton-menu" type="button" aria-expanded="false"
+              aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ 2. PORTADA ============ -->
+    <section class="portada" id="inicio">
+      <div class="contenedor">
+        <div class="portada__rejilla">
+          <div>
+            <h1 class="portada__titulo">Enderezado y pintura de carros en Ciudad de Guatemala</h1>
+            <p class="portada__texto">Reparamos golpes, pintamos y pulimos tu carro. Te damos la cotización por escrito antes de empezar.</p>
+            <div class="portada__acciones">
+              <a class="boton boton--principal" href="#cotizar">Pedir cotización</a>
+              <a class="boton" href="https://wa.me/50255550187?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20de%20carrocer%C3%ADa%20o%20pintura.">Escribir por WhatsApp</a>
+            </div>
+          </div>
+          <!-- CAMBIAR FOTO: reemplaza img/portada-pintura-01.webp y ajusta width/height al tamaño real -->
+          <div class="portada__foto">
+            <img src="img/portada-pintura-01.webp" width="1000" height="667"
+                 alt="Pintor con overol y respirador aplicando pintura con pistola a un carro blanco">
+          </div>
+        </div>
+
+        <!-- CAMBIAR: cifras de la portada (son [EJEMPLO]) -->
+        <ul class="cifras">
+          <li><span class="cifra__numero">15 años</span><span class="cifra__texto">de experiencia <span class="ejemplo">[EJEMPLO]</span></span></li>
+          <li><span class="cifra__numero">12 meses</span><span class="cifra__texto">de garantía en pintura <span class="ejemplo">[EJEMPLO]</span></span></li>
+          <li><span class="cifra__numero">Lun a sáb</span><span class="cifra__texto">en Zona 12 <span class="ejemplo">[EJEMPLO]</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 3. SERVICIOS ============ -->
+    <section class="seccion servicios" id="servicios" aria-labelledby="t-servicios">
+      <div class="contenedor servicios__rejilla">
+        <div class="revelar">
+          <h2 class="titulo-seccion" id="t-servicios">Servicios</h2>
+          <p class="intro">Trabajamos la carrocería y la pintura de tu carro. Estos son nuestros servicios. <span class="ejemplo">[EJEMPLO]</span></p>
+          <div class="servicios__foto">
+            <img src="img/pintura-pistola-01.jpg" width="756" height="406" loading="lazy"
+                 alt="Pistola de pintura naranja en la mano de un pintor con guante azul, sobre un carro azul">
+          </div>
+        </div>
+
+        <div class="servicios__lista revelar">
+          <!-- CAMBIAR: textos de los servicios -->
+          <ul>
+            <li class="servicio">
+              <h3 class="servicio__nombre">Enderezado de carrocería</h3>
+              <p class="servicio__texto">Corregimos golpes en puertas, cofres, salpicaderas y esquinas para que la pieza vuelva a ajustar bien.</p>
+            </li>
+            <li class="servicio">
+              <h3 class="servicio__nombre">Pintura completa</h3>
+              <p class="servicio__texto">Pintamos el carro entero, con preparación de la superficie y barniz protector.</p>
+            </li>
+            <li class="servicio">
+              <h3 class="servicio__nombre">Retoques y pintura de piezas</h3>
+              <p class="servicio__texto">Reparamos raspones y pintamos una sola pieza, como defensa, espejo o puerta.</p>
+            </li>
+            <li class="servicio">
+              <h3 class="servicio__nombre">Igualación de color</h3>
+              <p class="servicio__texto">Preparamos la mezcla según el color actual de tu carro, para que lo reparado no se note.</p>
+            </li>
+            <li class="servicio">
+              <h3 class="servicio__nombre">Pulido</h3>
+              <p class="servicio__texto">Quitamos marcas finas y opacidad, y devolvemos el brillo a la pintura.</p>
+            </li>
+          </ul>
+          <p class="servicios__enlace"><a href="https://wa.me/50255550187?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20de%20carrocer%C3%ADa%20o%20pintura.">¿No sabes qué necesita tu carro? Cuéntanos por WhatsApp.</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. PROCESO ============ -->
+    <section class="seccion proceso" id="proceso" aria-labelledby="t-proceso">
+      <div class="contenedor">
+        <div class="revelar">
+          <h2 class="titulo-seccion" id="t-proceso">Cómo trabajamos <span class="ejemplo">[EJEMPLO]</span></h2>
+          <p class="intro">Estos son los pasos de una reparación, de la revisión a la entrega.</p>
+        </div>
+
+        <ol class="pasos">
+          <li class="paso revelar">
+            <span class="paso__numero" aria-hidden="true">1</span>
+            <div>
+              <h3 class="paso__nombre"><span class="solo-lectores">Paso 1. </span>Revisión y cotización</h3>
+              <p class="paso__texto">Revisamos el carro y te damos la cotización por escrito antes de empezar.</p>
+            </div>
+            <div class="paso__fotos"></div>
+          </li>
+          <li class="paso revelar">
+            <span class="paso__numero" aria-hidden="true">2</span>
+            <div>
+              <h3 class="paso__nombre"><span class="solo-lectores">Paso 2. </span>Enderezado</h3>
+              <p class="paso__texto">Corregimos golpes y deformaciones hasta que cada pieza vuelva a su forma.</p>
+            </div>
+            <div class="paso__fotos">
+              <img src="img/preparacion-capo-01.jpg" width="399" height="501" loading="lazy"
+                   alt="Personal del taller trabajando en el cofre de un carro rojo con la pintura desgastada">
+            </div>
+          </li>
+          <li class="paso revelar">
+            <span class="paso__numero" aria-hidden="true">3</span>
+            <div>
+              <h3 class="paso__nombre"><span class="solo-lectores">Paso 3. </span>Lijado y preparación</h3>
+              <p class="paso__texto">Lijamos la superficie para que la pintura agarre bien y quede pareja.</p>
+            </div>
+            <div class="paso__fotos">
+              <img src="img/lijado-esmeril-01.jpg" width="337" height="600" loading="lazy"
+                   alt="Mecánico usando una lijadora angular junto a la llanta de un carro">
+              <img src="img/lijado-mano-01.jpg" width="399" height="501" loading="lazy"
+                   alt="Dos personas lijando a mano la salpicadera de un carro rojo">
+            </div>
+          </li>
+          <li class="paso revelar">
+            <span class="paso__numero" aria-hidden="true">4</span>
+            <div>
+              <h3 class="paso__nombre"><span class="solo-lectores">Paso 4. </span>Igualación de color y pintura</h3>
+              <p class="paso__texto">Preparamos el color según el de tu carro y aplicamos la pintura y el barniz.</p>
+            </div>
+            <div class="paso__fotos"></div>
+          </li>
+          <li class="paso revelar">
+            <span class="paso__numero" aria-hidden="true">5</span>
+            <div>
+              <h3 class="paso__nombre"><span class="solo-lectores">Paso 5. </span>Pulido y entrega</h3>
+              <p class="paso__texto">Pulimos, revisamos el trabajo contigo y te entregamos la garantía por escrito.</p>
+            </div>
+            <div class="paso__fotos"></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 5. ANTES Y DESPUÉS ============ -->
+    <section class="seccion" id="resultados" aria-labelledby="t-resultados">
+      <div class="contenedor">
+        <div class="revelar">
+          <h2 class="titulo-seccion" id="t-resultados">Resultados <span class="ejemplo">[EJEMPLO]</span></h2>
+          <p class="intro">Así llegó un carro y así quedó después del trabajo.</p>
+        </div>
+
+        <div class="resultados__rejilla">
+          <figure class="resultado revelar">
+            <p class="resultado__etiqueta">Antes</p>
+            <img src="img/preparacion-capo-01.jpg" width="399" height="501" loading="lazy"
+                 alt="Cofre de un carro rojo con la pintura vieja y desgastada, antes de la reparación">
+            <figcaption class="resultado__pie">Pintura desgastada y capa de pintura vieja levantada en el cofre.</figcaption>
+          </figure>
+
+          <!-- CAMBIAR FOTO: esta es una ilustración de práctica. Cuando tengas la foto real del "después",
+               cambia el archivo en src y el texto alternativo. -->
+          <figure class="resultado resultado--despues revelar">
+            <p class="resultado__etiqueta">Después</p>
+            <img src="img/despues-capo-ejemplo.jpg" width="399" height="501" loading="lazy"
+                 alt="El mismo carro rojo, con el cofre y la salpicadera repintados en rojo parejo, después de la reparación">
+            <figcaption class="resultado__pie">Cofre y salpicadera con pintura roja pareja. <span class="ejemplo">[EJEMPLO]</span></figcaption>
+          </figure>
+        </div>
+
+        <p class="aviso">Imágenes de práctica. No corresponden a un trabajo real del taller. <span class="ejemplo">[EJEMPLO]</span></p>
+      </div>
+    </section>
+
+    <!-- ============ 6. POR QUÉ ELEGIRNOS ============ -->
+    <section class="seccion oscuro" id="por-que" aria-labelledby="t-porque">
+      <div class="contenedor">
+        <h2 class="titulo-seccion revelar" id="t-porque">Por qué elegirnos</h2>
+
+        <!-- CAMBIAR: las cifras y los textos de las 4 razones -->
+        <ul class="razones">
+          <li class="razon revelar">
+            <span class="razon__cifra">15 años <span class="ejemplo">[EJEMPLO]</span></span>
+            <p class="razon__texto">de experiencia en enderezado y pintura de carros.</p>
+          </li>
+          <li class="razon revelar">
+            <span class="razon__cifra">12 meses <span class="ejemplo">[EJEMPLO]</span></span>
+            <p class="razon__texto">de garantía en pintura y 6 meses en enderezado, por escrito en la orden de trabajo.</p>
+          </li>
+          <li class="razon revelar">
+            <span class="razon__cifra">Por escrito <span class="ejemplo">[EJEMPLO]</span></span>
+            <p class="razon__texto">La cotización, antes de empezar, para que sepas qué se va a hacer.</p>
+          </li>
+          <li class="razon revelar">
+            <span class="razon__cifra">Color igualado <span class="ejemplo">[EJEMPLO]</span></span>
+            <p class="razon__texto">Preparamos la mezcla según el color actual de tu carro para que lo reparado no se note.</p>
+          </li>
+        </ul>
+
+        <p class="razones__cierre revelar">Trabajamos con carros particulares, pilotos de plataformas y de taxi, y empresas con 2 a 10 vehículos. <span class="ejemplo">[EJEMPLO]</span></p>
+      </div>
+    </section>
+
+    <!-- ============ 7. TESTIMONIOS ============ -->
+    <section class="seccion" id="opiniones" aria-labelledby="t-opiniones">
+      <div class="contenedor">
+        <h2 class="titulo-seccion revelar" id="t-opiniones">Lo que dicen nuestros clientes <span class="ejemplo">[EJEMPLO]</span></h2>
+
+        <!-- CAMBIAR: opiniones (las actuales son de práctica) -->
+        <div class="citas">
+          <figure class="cita revelar">
+            <blockquote class="cita__texto">“Me rasparon la puerta en un parqueo y quedó como nueva. El color es idéntico.”</blockquote>
+            <figcaption class="cita__autor">Ana Lucía M. <span class="ejemplo">[EJEMPLO]</span></figcaption>
+          </figure>
+          <figure class="cita revelar">
+            <blockquote class="cita__texto">“Trabajo con el carro todos los días. Me dijeron cuatro días y me lo entregaron en cuatro días.”</blockquote>
+            <figcaption class="cita__autor">Carlos P., piloto de plataforma <span class="ejemplo">[EJEMPLO]</span></figcaption>
+          </figure>
+          <figure class="cita revelar">
+            <blockquote class="cita__texto">“Les llevamos dos pickups de la empresa. Nos dieron la cotización por escrito antes de empezar.”</blockquote>
+            <figcaption class="cita__autor">Mynor R., encargado de una distribuidora <span class="ejemplo">[EJEMPLO]</span></figcaption>
+          </figure>
+        </div>
+
+        <p class="aviso">Opiniones de práctica. No son de clientes reales. <span class="ejemplo">[EJEMPLO]</span></p>
+      </div>
+    </section>
+
+    <!-- ============ 8. UBICACIÓN Y HORARIO ============ -->
+    <section class="seccion ubicacion" id="ubicacion" aria-labelledby="t-ubicacion">
+      <div class="contenedor ubicacion__rejilla">
+        <div class="revelar">
+          <h2 class="titulo-seccion" id="t-ubicacion">Ubicación y horario</h2>
+          <!-- CAMBIAR: dirección, horario y teléfonos (todo [EJEMPLO]) -->
+          <dl class="datos">
+            <div>
+              <dt>Dirección</dt>
+              <dd>6a. Avenida 12-45, Zona 12, Ciudad de Guatemala <span class="ejemplo">[EJEMPLO]</span></dd>
+            </div>
+            <div>
+              <dt>Horario</dt>
+              <dd>Lunes a viernes 8:00 a 17:30. Sábados 8:00 a 13:00. Domingos cerrado. <span class="ejemplo">[EJEMPLO]</span></dd>
+            </div>
+            <div>
+              <dt>Teléfono</dt>
+              <dd><a href="tel:+50225550142">(+502) 2555-0142</a> <span class="ejemplo">[EJEMPLO]</span></dd>
+            </div>
+            <div>
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/50255550187">(+502) 5555-0187</a> <span class="ejemplo">[EJEMPLO]</span></dd>
+            </div>
+          </dl>
+          <a class="boton boton--principal" href="https://wa.me/50255550187?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20de%20carrocer%C3%ADa%20o%20pintura.">Escribir por WhatsApp</a>
+        </div>
+
+        <!-- CAMBIAR: el mapa muestra la Zona 12 en general. Con la dirección real, cambia lo que está después de "q=" en el src. -->
+        <div class="mapa revelar">
+          <iframe title="Mapa de Google Maps de la Zona 12, Ciudad de Guatemala"
+                  src="https://www.google.com/maps?q=Zona+12,+Ciudad+de+Guatemala&amp;output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="mapa__nota">Mapa de la Zona 12. La ubicación exacta del taller es de práctica. <span class="ejemplo">[EJEMPLO]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. COTIZACIÓN ============ -->
+    <section class="seccion" id="cotizar" aria-labelledby="t-cotizar">
+      <div class="contenedor cotizar__rejilla">
+        <div class="revelar">
+          <h2 class="titulo-seccion" id="t-cotizar">Pide tu cotización</h2>
+          <p class="intro">Cuéntanos qué necesita tu carro. Te damos la cotización por escrito antes de empezar.</p>
+        </div>
+
+        <!-- Este formulario no guarda datos: js/main.js arma el mensaje y abre WhatsApp -->
+        <form class="formulario revelar" id="form-cotizar" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono o WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+          </div>
+          <div class="campo">
+            <label for="trabajo">Tipo de trabajo</label>
+            <select id="trabajo" name="trabajo">
+              <option>Enderezado de carrocería</option>
+              <option>Pintura completa</option>
+              <option>Retoques y pintura de piezas</option>
+              <option>Igualación de color</option>
+              <option>Pulido</option>
+              <option>No estoy seguro</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Cuéntanos qué le pasó al carro (opcional)</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+          </div>
+
+          <p class="formulario__error" id="error-form" role="alert"></p>
+          <button class="boton boton--principal" type="submit">Enviar por WhatsApp</button>
+          <p class="formulario__nota">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 10. PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <p class="pie__marca">Taller Web</p>
+          <p class="pie__descripcion">Enderezado y pintura de carros en Ciudad de Guatemala.</p>
+        </div>
+        <div class="pie__datos">
+          <p>6a. Avenida 12-45, Zona 12 <span class="ejemplo">[EJEMPLO]</span></p>
+          <p>Teléfono: <a href="tel:+50225550142">(+502) 2555-0142</a> <span class="ejemplo">[EJEMPLO]</span></p>
+          <p>WhatsApp: <a href="https://wa.me/50255550187">(+502) 5555-0187</a> <span class="ejemplo">[EJEMPLO]</span></p>
+          <p>Lunes a viernes 8:00 a 17:30. Sábados 8:00 a 13:00. Domingos cerrado. <span class="ejemplo">[EJEMPLO]</span></p>
+        </div>
+        <nav aria-label="Enlaces rápidos">
+          <ul class="pie__enlaces">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#cotizar">Cotizar</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="pie__legal">
+        <p>Esta página es una práctica. Las fotos, los nombres, los teléfonos, la dirección y las opiniones son datos de ejemplo y no corresponden a un taller real.</p>
+        <p>© 2026 Taller Web <span class="ejemplo">[EJEMPLO]</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

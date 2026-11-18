@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 399 501" width="399" height="501">
+  <!-- Ilustración de práctica: cofre rojo terminado, pintura pareja y brillante. Sin degradados. -->
+  <rect width="399" height="501" fill="#d9dcdf"/>
+  <!-- Cofre -->
+  <path d="M40 470 L70 120 Q200 60 330 120 L360 470 Z" fill="#a3201f"/>
+  <!-- Zona de reflejo (plano, sin degradado) -->
+  <path d="M95 150 Q200 105 305 150 L318 215 Q200 170 82 215 Z" fill="#c13a37"/>
+  <path d="M110 250 Q200 225 290 250 L295 275 Q200 252 105 275 Z" fill="#b82e2c"/>
+  <!-- Líneas de panel -->
+  <path d="M70 120 L40 470" stroke="#7d1716" stroke-width="3" fill="none"/>
+  <path d="M330 120 L360 470" stroke="#7d1716" stroke-width="3" fill="none"/>
+  <path d="M200 90 L200 470" stroke="#8c1b1a" stroke-width="2" fill="none"/>
+  <!-- Rótulo de práctica -->
+  <rect x="79" y="395" width="241" height="44" fill="#ffffff"/>
+  <text x="199.5" y="423" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#2b2f33">Ilustración [EJEMPLO]</text>
+</svg>
