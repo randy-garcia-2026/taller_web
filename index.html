@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/jpeg" href="img/logo-jg.jpg">
+
   <!-- CAMBIAR: título y descripción que aparecen en Google -->
   <title>Taller Web | Enderezado y pintura de carros en Ciudad de Guatemala</title>
   <meta name="description" content="Enderezado de carrocería, pintura completa, retoques, igualación de color y pulido en Zona 12, Ciudad de Guatemala. Cotización por escrito antes de empezar. (Datos de práctica)">
@@ -48,7 +50,10 @@
        El mensaje que se escribe solo está después de "?text=". -->
   <header class="barra">
     <div class="contenedor barra__interior">
-      <a class="barra__marca" href="#inicio">Taller Web</a>
+      <a class="barra__marca" href="#inicio">
+        <img class="barra__logo" src="img/logo-jg.jpg" width="48" height="48" alt="Logo JG, enderezado y pintura">
+        <span>Taller Web</span>
+      </a>
 
       <nav class="barra__menu" id="menu" aria-label="Principal">
         <a href="#servicios">Servicios</a>
@@ -109,13 +114,13 @@
         <div class="revelar">
           <h2 class="titulo-seccion" id="t-servicios">Servicios</h2>
           <p class="intro">Trabajamos la carrocería y la pintura de tu carro. Estos son nuestros servicios. <span class="ejemplo">[EJEMPLO]</span></p>
-          <div class="servicios__foto">
+          <div class="servicios__foto" data-plegable="servicios">
             <img src="img/pintura-pistola-01.jpg" width="756" height="406" loading="lazy"
                  alt="Pistola de pintura naranja en la mano de un pintor con guante azul, sobre un carro azul">
           </div>
         </div>
 
-        <div class="servicios__lista revelar">
+        <div class="servicios__lista revelar" data-plegable="servicios">
           <!-- CAMBIAR: textos de los servicios -->
           <ul>
             <li class="servicio">
@@ -152,7 +157,7 @@
           <p class="intro">Estos son los pasos de una reparación, de la revisión a la entrega.</p>
         </div>
 
-        <ol class="pasos">
+        <ol class="pasos" data-plegable="cómo trabajamos">
           <li class="paso revelar">
             <span class="paso__numero" aria-hidden="true">1</span>
             <div>
@@ -213,7 +218,7 @@
           <p class="intro">Así llegó un carro y así quedó después del trabajo.</p>
         </div>
 
-        <div class="resultados__rejilla">
+        <div class="resultados__rejilla" data-plegable="resultados">
           <figure class="resultado revelar">
             <p class="resultado__etiqueta">Antes</p>
             <img src="img/preparacion-capo-01.jpg" width="399" height="501" loading="lazy"
@@ -231,7 +236,7 @@
           </figure>
         </div>
 
-        <p class="aviso">Imágenes de práctica. No corresponden a un trabajo real del taller. <span class="ejemplo">[EJEMPLO]</span></p>
+        <p class="aviso" data-plegable="resultados">Imágenes de práctica. No corresponden a un trabajo real del taller. <span class="ejemplo">[EJEMPLO]</span></p>
       </div>
     </section>
 
@@ -241,7 +246,7 @@
         <h2 class="titulo-seccion revelar" id="t-porque">Por qué elegirnos</h2>
 
         <!-- CAMBIAR: las cifras y los textos de las 4 razones -->
-        <ul class="razones">
+        <ul class="razones" data-plegable="por qué elegirnos">
           <li class="razon revelar">
             <span class="razon__cifra">15 años <span class="ejemplo">[EJEMPLO]</span></span>
             <p class="razon__texto">de experiencia en enderezado y pintura de carros.</p>
@@ -260,7 +265,7 @@
           </li>
         </ul>
 
-        <p class="razones__cierre revelar">Trabajamos con carros particulares, pilotos de plataformas y de taxi, y empresas con 2 a 10 vehículos. <span class="ejemplo">[EJEMPLO]</span></p>
+        <p class="razones__cierre revelar" data-plegable="por qué elegirnos">Trabajamos con carros particulares, pilotos de plataformas y de taxi, y empresas con 2 a 10 vehículos. <span class="ejemplo">[EJEMPLO]</span></p>
       </div>
     </section>
 
@@ -270,7 +275,7 @@
         <h2 class="titulo-seccion revelar" id="t-opiniones">Lo que dicen nuestros clientes <span class="ejemplo">[EJEMPLO]</span></h2>
 
         <!-- CAMBIAR: opiniones (las actuales son de práctica) -->
-        <div class="citas">
+        <div class="citas" data-plegable="opiniones">
           <figure class="cita revelar">
             <blockquote class="cita__texto">“Me rasparon la puerta en un parqueo y quedó como nueva. El color es idéntico.”</blockquote>
             <figcaption class="cita__autor">Ana Lucía M. <span class="ejemplo">[EJEMPLO]</span></figcaption>
@@ -285,7 +290,7 @@
           </figure>
         </div>
 
-        <p class="aviso">Opiniones de práctica. No son de clientes reales. <span class="ejemplo">[EJEMPLO]</span></p>
+        <p class="aviso" data-plegable="opiniones">Opiniones de práctica. No son de clientes reales. <span class="ejemplo">[EJEMPLO]</span></p>
       </div>
     </section>
 
@@ -295,7 +300,7 @@
         <div class="revelar">
           <h2 class="titulo-seccion" id="t-ubicacion">Ubicación y horario</h2>
           <!-- CAMBIAR: dirección, horario y teléfonos (todo [EJEMPLO]) -->
-          <dl class="datos">
+          <dl class="datos" data-plegable="ubicación y horario">
             <div>
               <dt>Dirección</dt>
               <dd>6a. Avenida 12-45, Zona 12, Ciudad de Guatemala <span class="ejemplo">[EJEMPLO]</span></dd>
@@ -317,7 +322,7 @@
         </div>
 
         <!-- CAMBIAR: el mapa muestra la Zona 12 en general. Con la dirección real, cambia lo que está después de "q=" en el src. -->
-        <div class="mapa revelar">
+        <div class="mapa revelar" data-plegable="ubicación y horario">
           <iframe title="Mapa de Google Maps de la Zona 12, Ciudad de Guatemala"
                   src="https://www.google.com/maps?q=Zona+12,+Ciudad+de+Guatemala&amp;output=embed"
                   loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>

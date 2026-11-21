@@ -97,3 +97,44 @@ document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (enlace)
       "_blank", "noopener");
   });
 })();
+
+/* ---------- 4. Secciones que se ocultan y se muestran (celular) ---------- */
+// Cada bloque marcado con data-plegable se esconde en celular. Se crea un botón
+// con una flechita justo antes del primer bloque de su grupo. En pantallas
+// grandes el CSS no esconde nada y el botón no se ve.
+(function () {
+  var grupos = {};
+  document.querySelectorAll("[data-plegable]").forEach(function (bloque) {
+    var nombre = bloque.getAttribute("data-plegable");
+    (grupos[nombre] = grupos[nombre] || []).push(bloque);
+  });
+
+  Object.keys(grupos).forEach(function (nombre, i) {
+    var bloques = grupos[nombre];
+    var boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "plegable-boton";
+    boton.setAttribute("aria-expanded", "false");
+    boton.setAttribute("aria-label", "Mostrar " + nombre);
+    boton.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+
+    // Los bloques necesitan un id para que el botón los pueda señalar
+    var ids = bloques.map(function (b, j) {
+      b.id = b.id || "plegable-" + i + "-" + j;
+      b.classList.add("plegado");
+      return b.id;
+    });
+    boton.setAttribute("aria-controls", ids.join(" "));
+
+    boton.addEventListener("click", function () {
+      var abrir = boton.getAttribute("aria-expanded") === "false";
+      bloques.forEach(function (b) { b.classList.toggle("plegado", !abrir); });
+      boton.setAttribute("aria-expanded", abrir ? "true" : "false");
+      boton.setAttribute("aria-label", (abrir ? "Ocultar " : "Mostrar ") + nombre);
+    });
+
+    bloques[0].parentNode.insertBefore(boton, bloques[0]);
+  });
+})();
