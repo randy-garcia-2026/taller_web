@@ -20,6 +20,8 @@ La página está completa y funcionando (10 secciones, versión de escritorio y 
 10. Cifras de la portada más pequeñas en celular (36 px en vez de 52 px, menos espacio entre ellas). En pantallas de 40 rem o más no cambia.
 11. Colores alineados con el logo: las zonas oscuras (barra superior, "Por qué elegirnos" y pie) usan el negro del logo (`--color-negro`, `#010101`). El texto principal pasó a negro suave neutro (`#141414`) y el secundario a gris neutro (`#5a5a5a`). Las líneas y el texto suave sobre fondo oscuro también son grises neutros.
 
+12. Nueva revisión visual en Chrome (escritorio 1280 px y celular 390 px, menú de tres rayas incluido): estructura y formato adecuados, sin desborde horizontal, sin fotos rotas y sin errores en consola. Se redujo el espacio entre palabras de las cifras de "Por qué elegirnos" (de `.18em` a `.05em`).
+
 ## Decisiones de hoy
 
 - Usar el logo JG en la barra superior.
@@ -30,8 +32,7 @@ La página está completa y funcionando (10 secciones, versión de escritorio y 
 
 ## Pendiente o a medias
 
-- Falta la foto real del "después" en Resultados (hoy es un recuadro vacío [EJEMPLO]).
-- Falta el mapa real en Ubicación (hoy es un recuadro vacío [EJEMPLO]).
+- La foto del "después" en Resultados ya existe (cofre con pintura roja) y el mapa de Ubicación ya muestra la Zona 12 de Google. Ambos siguen marcados [EJEMPLO]: falta la foto real del trabajo y el mapa con la dirección real del taller.
 - **Nombre del taller:** la página dice "Taller Web" y el logo dice "JG". Falta decidir si se deja así, si el logo va solo o si se cambia el nombre.
 - **Dorado del logo:** los botones y detalles siguen en rojo. Se propuso pasarlos al dorado del logo (con texto negro en los botones). Sin decidir.
 - **Fondos claros:** tienen un leve tono verdoso (`#f2f4f3`, `#e4e8e7`). Se propuso pasarlos a un gris cálido casi blanco. Sin decidir.

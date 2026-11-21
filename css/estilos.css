@@ -431,7 +431,7 @@ a { color: inherit; }
   font-size: clamp(3.25rem, 11vw, 6rem);
   line-height: .95;
   letter-spacing: .01em; /* la letra condensada necesita aire entre letras... */
-  word-spacing: .18em;   /* ...y entre palabras, para que no se lea "Porescrito" */
+  word-spacing: .05em;   /* ...y un poco entre palabras, para que no se lea "Porescrito" */
 }
 /* La marca [EJEMPLO] va en su propia línea bajo la cifra, igual en las cuatro razones */
 .razon__cifra .ejemplo { display: block; margin-top: .5rem; }
