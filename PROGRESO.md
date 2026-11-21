@@ -1,10 +1,10 @@
 # PROGRESO: Taller Web
 
-Última actualización: 17 de noviembre de 2026 (cierre de sesión).
+Última actualización: 21 de noviembre de 2026.
 
 ## Dónde quedamos
 
-La página está completa y funcionando (10 secciones, versión de escritorio y de celular). Hay 14 puntos de restauración en Git; el último de la página es el 14, y después se guardó el de cierre de sesión.
+La página está completa y funcionando (10 secciones, versión de escritorio y de celular), ahora con el logo del taller y secciones plegables en celular. Git está limpio. Hay 2 puntos de restauración; el último es `7e4cb4b` (logo y botones plegables).
 
 ## Etapas terminadas
 
@@ -15,27 +15,30 @@ La página está completa y funcionando (10 secciones, versión de escritorio y 
 5. Mejoras de celular: fotos del proceso, menos espacio en blanco y marcas [EJEMPLO] más legibles (punto 12).
 6. Más separación entre letras y palabras en "Por qué elegirnos", verificado a 320, 360 y 390 px (punto 13).
 7. Auditoría de calidad y correcciones aprobadas: colores en variables y mensaje de WhatsApp sin doble punto (punto 14).
+8. Logo oficial del taller (JG, `img/logo-jg.jpg`) en la barra superior y como ícono de la pestaña. No se puso en el pie ni en la portada (punto `7e4cb4b`).
+9. Botones plegables en celular (flechita ⌄) en 6 secciones: Servicios, Cómo trabajamos, Resultados, Por qué elegirnos, Opiniones y Ubicación y horario. Con la sección cerrada se ve solo el título y el botón; en Ubicación el botón de WhatsApp queda siempre visible. En computadora y tablet (40 rem o más) todo se ve abierto. Aprobado por el usuario (punto `7e4cb4b`).
 
 ## Decisiones de hoy
 
-- Aplicar las tres mejoras de celular propuestas tras la revisión.
-- Mantener el estilo condensado de los textos grandes y solo abrir el espacio entre letras y palabras.
-- Aprobar las correcciones 1 (colores) y 2 (doble punto) de la auditoría.
-- No tocar los detalles menores y dejar las opciones 3, 4 y 5 como están (ver `BRIEF.md`).
+- Usar el logo JG en la barra superior.
+- Hacer la página de celular menos larga con secciones plegables, para que el contacto rápido quede a la mano.
+- Dejar Cotización, la portada y la barra con WhatsApp siempre visibles.
 
 ## Pendiente o a medias
 
-- **4 imágenes borradas sin guardar en Git:** `imageds.jpeg`, `images (1).jpeg`, `images.jpeg` y `segundo-paso-lijado-337x600.jpg` (están en la carpeta raíz, no en `img/`). Ya aparecían borradas al empezar la sesión. Nadie ha decidido si el borrado es intencional.
 - Falta la foto real del "después" en Resultados (hoy es un recuadro vacío [EJEMPLO]).
 - Falta el mapa real en Ubicación (hoy es un recuadro vacío [EJEMPLO]).
+- **Nombre del taller:** la página dice "Taller Web" y el logo dice "JG". Falta decidir si se deja así, si el logo va solo o si se cambia el nombre.
+- **Colores:** el dorado del logo no se usa en la página. Se propuso como posible color de acento, o una barra más oscura que combine con el fondo negro del logo. Sin decidir.
 - Todos los datos siguen siendo de práctica [EJEMPLO]: teléfonos, dirección, horario, opiniones y cifras.
 - Los números de ejemplo tienen formato real de Guatemala: el botón de WhatsApp y el formulario abren un chat con ese número. Para probar el formulario, usar un número propio en `NUMERO_WHATSAPP` (`js/main.js`).
 
 ## Siguiente paso para mañana
 
-Decidir qué hacer con las 4 imágenes borradas: **o** confirmar que el borrado es intencional (yo lo guardo en Git y el estado queda limpio), **o** pedir que se restauren con `git restore`. Es lo único que impide tener el proyecto en estado limpio.
+Decidir el nombre del taller (Taller Web o JG) y si se usa el dorado del logo en la página. Después, revisar en el celular real los botones plegables.
 
 ## Para retomar
 
 - Servidor para ver la página en Chrome: desde la carpeta `taller_web`, `python3 -m http.server 8765` y abrir `http://127.0.0.1:8765/index.html`.
 - Archivos de la página: `index.html`, `css/estilos.css`, `js/main.js`.
+- Botones plegables: se marcan con `data-plegable="nombre"` en `index.html`. El código está en la sección 4 de `js/main.js` y el estilo en la 13b de `css/estilos.css`.
