@@ -16,7 +16,8 @@ La página está completa y funcionando (10 secciones, versión de escritorio y 
 6. Más separación entre letras y palabras en "Por qué elegirnos", verificado a 320, 360 y 390 px (punto 13).
 7. Auditoría de calidad y correcciones aprobadas: colores en variables y mensaje de WhatsApp sin doble punto (punto 14).
 8. Logo oficial del taller (JG, `img/logo-jg.jpg`) en la barra superior y como ícono de la pestaña. No se puso en el pie ni en la portada (punto `7e4cb4b`).
-H. Cifras de la portada más pequeñas en celular (36 px en vez de 52 px, menos espacio entre ellas). En pantallas de 40 rem o más no cambia.
+9. Botones plegables en celular (flechita ⌄) en 6 secciones: Servicios, Cómo trabajamos, Resultados, Por qué elegirnos, Opiniones y Ubicación y horario. Con la sección cerrada se ve solo el título y el botón; en Ubicación el botón de WhatsApp queda siempre visible. En computadora y tablet (40 rem o más) todo se ve abierto. Aprobado por el usuario (punto `7e4cb4b`).
+10. Cifras de la portada más pequeñas en celular (36 px en vez de 52 px, menos espacio entre ellas). En pantallas de 40 rem o más no cambia.
 11. Colores alineados con el logo: las zonas oscuras (barra superior, "Por qué elegirnos" y pie) usan el negro del logo (`--color-negro`, `#010101`). El texto principal pasó a negro suave neutro (`#141414`) y el secundario a gris neutro (`#5a5a5a`). Las líneas y el texto suave sobre fondo oscuro también son grises neutros.
 
 ## Decisiones de hoy
