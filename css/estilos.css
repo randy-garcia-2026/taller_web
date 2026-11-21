@@ -9,17 +9,18 @@
    --------------------------------------------------------------------- */
 :root {
   /* COLORES: cambia el valor (#xxxxxx) y se actualiza toda la página */
-  --color-tinta: #1e2a30;        /* texto principal y fondos oscuros */
+  --color-negro: #010101;        /* fondos oscuros: mismo negro del logo del taller */
+  --color-tinta: #141414;        /* texto principal (negro suave) */
   --color-papel: #f2f4f3;        /* fondo claro de la página */
   --color-papel-2: #e4e8e7;      /* fondo claro alterno (sección ubicación) */
   --color-acento: #a8231b;       /* rojo para botones y detalles */
   --color-acento-oscuro: #861a14;/* rojo al pasar el mouse */
-  --color-acero: #55646c;        /* texto secundario */
+  --color-acero: #5a5a5a;        /* texto secundario (gris neutro) */
   --color-linea: #c9d0d2;        /* líneas finas */
   --color-blanco: #ffffff;
-  --color-tinta-suave: #b9c4c9;  /* texto secundario sobre fondo oscuro */
-  --color-linea-barra: #38474e;  /* líneas finas dentro de la barra superior */
-  --color-linea-oscura: #4a5a62; /* líneas finas sobre fondos oscuros */
+  --color-tinta-suave: #bcbcbc;  /* texto secundario sobre fondo oscuro */
+  --color-linea-barra: #2e2e2e;  /* líneas finas dentro de la barra superior */
+  --color-linea-oscura: #444444; /* líneas finas sobre fondos oscuros */
 
   /* FUENTES: la fuente se carga desde Google Fonts en index.html */
   --fuente: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -132,7 +133,7 @@ a { color: inherit; }
 .seccion { padding-block: var(--espacio-seccion); }
 
 .oscuro {
-  background: var(--color-tinta);
+  background: var(--color-negro);
   color: var(--color-papel);
 }
 
@@ -197,7 +198,7 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-tinta);
+  background: var(--color-negro);
   color: var(--color-papel);
 }
 
@@ -266,7 +267,7 @@ a { color: inherit; }
   left: 0; right: 0;
   top: 100%;
   padding: .5rem var(--margen) 1.25rem;
-  background: var(--color-tinta);
+  background: var(--color-negro);
   border-top: 1px solid var(--color-linea-barra);
 }
 .barra__menu.abierto { display: block; }
@@ -310,16 +311,16 @@ a { color: inherit; }
 /* Cifras de la portada */
 .cifras {
   display: grid;
-  gap: 1.75rem;
+  gap: 1rem;                 /* celular: más compacto; en 40 rem o más vuelve a 1.75rem */
   margin-top: clamp(3.5rem, 9vw, 6rem);
-  padding-block: 2rem;
+  padding-block: 1.5rem;
   border-top: 2px solid var(--color-tinta);
 }
 .cifra__numero {
   display: block;
   font-weight: 800;
   font-stretch: 75%;
-  font-size: clamp(3.25rem, 11vw, 5.5rem);
+  font-size: 2.25rem;        /* celular; en 40 rem o más vuelve al tamaño grande */
   line-height: .95;
   letter-spacing: -.02em;
 }
@@ -517,7 +518,7 @@ a { color: inherit; }
 /* ---------------------------------------------------------------------
    13. PIE DE PÁGINA
    --------------------------------------------------------------------- */
-.pie { padding-block: 4rem 2.5rem; background: var(--color-tinta); color: var(--color-papel); }
+.pie { padding-block: 4rem 2.5rem; background: var(--color-negro); color: var(--color-papel); }
 .pie__rejilla { display: grid; gap: 2.5rem; }
 .pie__marca {
   font-weight: 800;
@@ -581,7 +582,8 @@ a { color: inherit; }
   .solo-grande { display: inline; }
   .barra__interior { gap: .75rem; }
   .barra__whatsapp { padding: .4rem 1rem; font-size: .95rem; }
-  .cifras { grid-template-columns: repeat(3, auto); justify-content: space-between; }
+  .cifras { grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 1.75rem; padding-block: 2rem; }
+  .cifra__numero { font-size: clamp(3.25rem, 11vw, 5.5rem); }
   .resultados__rejilla { grid-template-columns: 1fr 1fr; align-items: start; }
   .resultado--despues { margin-top: 4rem; }  /* ritmo asimétrico */
   .pie__rejilla { grid-template-columns: 1.2fr 1fr 1fr; }
